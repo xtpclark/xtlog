@@ -1,0 +1,33 @@
+<package id="xtlog-1.0.0"
+         name="xtlog"
+         developer="xTuple"
+         descrip="Client and Application Logging"
+         version="1.0.0"
+         updater="2.2.4">
+  <pkgnotes>Client and Application Logging add-on package for xTuple ERP.
+
+        This file is part of the xtlog package for xTuple ERP: PostBooks Edition,
+        a free and open source Enterprise Resource Planning software suite,
+        Copyright (c) 1999-2016 by OpenMFG LLC, d/b/a xTuple.
+        It is licensed to you under the Common Public Attribution License
+        version 1.0, the full text of which (including xTuple-specific Exhibits)
+        is available at www.xtuple.com/CPAL.  By using this software, you agree
+        to be bound by its terms.
+  </pkgnotes>
+
+  <prerequisite type="Query" name="xTuple ERP version">
+    <query>
+      SELECT compareVersion(fetchMetricText('ServerVersion'), '4.6.0') >= 0;
+    </query>
+    <message>
+      This version of the xtlog package only works with xTuple ERP
+      versions 4.6.0 and greater.
+    </message>
+  </prerequisite>
+
+  <createfunction file="resources/functions/login.sql"      name="login" />
+  <createfunction file="resources/functions/logout.sql"      name="logout" />
+  
+  <createtable file="resources/tables/xtlog.sql"    name="xtlog"/>
+ 
+</package>
