@@ -25,8 +25,8 @@
     </message>
   </prerequisite>
 
-  <createfunction file="resources/functions/login.sql"      name="login" />
-  <createfunction file="resources/functions/logout.sql"      name="logout" />
+  <createfunction file="resources/functions/login.sql"      name="public.login" />
+  <createfunction file="resources/functions/logout.sql"      name="public.logout" />
   
   <createtable file="resources/tables/xtlog.sql"    name="xtlog"/>
  
